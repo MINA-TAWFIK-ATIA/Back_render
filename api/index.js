@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const devicesRoutes = require("./routes/device-routes");
+const devicesRoutes = require("../routes/device-routes");
 const expressApp = express();
 const port = 3000 || process.env.port
 expressApp.use(express.json());
