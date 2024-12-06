@@ -22,5 +22,5 @@ expressApp.use((req, res, next) => {
     next();
   });
 expressApp.use('/devices', devicesRoutes);
-expressApp.listen(3000 , ()=>console.log("listening on port 3000  ............."));
+expressApp.listen(port , ()=>console.log("listening on port 3000  ............."));
 
