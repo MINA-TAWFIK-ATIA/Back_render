@@ -1,14 +1,15 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const devicesRoutes = require("../routes/device-routes");
 const expressApp = express();
+const connectDB =  require("../config/db")
+const dotenv = require("dotenv") ;
+dotenv.config();
 const port = 3000 || process.env.port
-expressApp.use(express.json());
-mongoose.connect('mongodb://localhost:27017/voltify')
-const connection = mongoose.connection
-connection.on('open' , ()=>{console.log('Connected To Data Base')})
-connection.on('error' , (err)=>{console.error(err)})
+// const { connectDB } = require("../config/db");
 
+
+expressApp.use(express.json());
+//connectDB();
 expressApp.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "http://localhost:4200");
     res.header(
